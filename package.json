@@ -1,0 +1,27 @@
+{
+  "name": "metalsmith-shortcodes-replace",
+  "version": "1.0.0",
+  "description": "A Metalsmith plugin for processing shortcodes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alan North",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^2.1.2",
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlansCodeLog/metalsmith-shortcodes-replace.git"
+  },
+  "keywords": [
+    "metalsmith",
+    "plugin"
+  ],
+  "bugs": {
+    "url": "https://github.com/AlansCodeLog/metalsmith-shortcodes-replace/issues"
+  },
+  "homepage": "https://github.com/AlansCodeLog/metalsmith-shortcodes-replace#readme"
+}
