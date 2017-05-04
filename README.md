@@ -40,14 +40,14 @@ metalsmith
 
 ### `shortcodes`
 
-Shortcodes should be an array of objects, each being their own shortcode.
+Shortcodes should be an array of objects, with each object being a shortcode. They are processed in order.
 
 ### `clean_cache`
 (default false)
 
 I needed several of my shortcodes to fetch the code from an api (see [notes](#notes)) and I didn't want to have more and more requests piling up as the blog expanded so I added a cache. Setting this to true will clear it (or you can delete the `cache.shortcodes.json` file. It cannot detect changes in the shortcode replacement function so you should set this to true when changing what your shortcode returns.
 
-If a shortcode matches the same thing as another shortcode but returns something different the cache would need to be cleared every time, so for those cases or for repetitively testing just one shortcode you can specify this option for individual shortcodes as well, and that shortcode well never look for itself in the cache.
+If a shortcode matches the same thing as another shortcode but returns something different the cache would need to be cleared every time, so for those cases or for repetitively testing just one shortcode you can specify this option for individual shortcodes as well, and that shortcode will never look for itself in the cache.
 
 ```javascript
 {
@@ -65,7 +65,19 @@ If a shortcode matches the same thing as another shortcode but returns something
 ### `name`
 (string)
 
-This will use the built in matcher so `name: "shortcode"` will match `[shortcode][/shortcode]` and if there's any parameters specified, for example `[shortcode id="1" other="attribute"]Interior[/shortcode]`, in the replace function you can access them with `params.id` and anything between the shortcode tags can be accessed with `params.inner`.
+This will use the built in matcher so `name: "shortcode"` will match `[shortcode][/shortcode]` and if there's any parameters specified, for example:
+
+```
+[shortcode id="1" other="attribute"]
+
+Interior
+
+Including newlines and even other unprocessed shortcodes.
+
+[/shortcode]
+```
+
+In the replace function you can access them with `params.id` and anything between the shortcode tags can be accessed with `params.inner`.
 
 ### `find`
 (string or regex)
