@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-shortcodes-replace",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Metalsmith plugin for processing shortcodes.",
   "main": "index.js",
   "scripts": {

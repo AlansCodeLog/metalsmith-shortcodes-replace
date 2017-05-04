@@ -51,7 +51,7 @@ function plugin(opts) {
             contents = new Buffer(contents)
             files[file].contents = contents
         }
+        fs.writeJsonSync('cache.shortcodes.json', cache)
+        done()
     }
-    fs.writeJsonSync('cache.shortcodes.json', cache)
-    done()
 }
